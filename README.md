@@ -3,7 +3,7 @@
 
 # Sales Analysis – Data Engineering Pipeline
 
-This project implements an end-to-end data engineering pipeline for retail sales analysis using modern tools like Google Cloud Storage, BigQuery, Dataproc, Terraform, DLT, dbt, Airflow, and Power BI. The first step involves provisioning the Google Cloud infrastructure using Terraform.
+This project implements an end-to-end data engineering pipeline for sales analysis using modern tools like Google Cloud Storage, BigQuery, Dataproc, Terraform, DLT, dbt, Airflow, and Power BI. The first step involves provisioning the Google Cloud infrastructure using Terraform.
 
 ## Overview
 
