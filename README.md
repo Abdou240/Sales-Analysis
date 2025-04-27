@@ -81,7 +81,7 @@ gcloud dataproc jobs submit pyspark \
     --region=us-central1 \
     gs://sales_data_bucket_project_cider/code/Sales_Data_Cleaning_And_Aggregation.py \
     -- \
-        --input_path=gs://sales_data_bucket_project_cider/sales_data_sample.csv \
+        --input_path=gs://sales_data_bucket_project_cider/sales_06_FY2020-21 copy.csv \
 		--output_raw_bq=sales_cleaned_raw.sales_raw_tab \
 		--output_parquet=gs://sales_data_bucket_project_cider/processed/cleaned_sales_data \
 		--output_bq=sales_marts.sales_processed_cleaned_tab \

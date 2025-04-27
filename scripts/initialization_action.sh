@@ -1,3 +1,5 @@
 #!/bin/bash
 set -e
-pip install dlt
+
+# 1) Install the DLT Python package
+pip install "dlt[bigquery,parquet]" gcsfs 

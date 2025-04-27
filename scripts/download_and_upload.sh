@@ -6,8 +6,8 @@
 # Set variables
 BUCKET_NAME="sales_data_bucket_project_cider"
 DATA_DIR="./raw_data"
-DOWNLOAD_DEST="$HOME/Downloads/sample-sales-data.zip"
-KAGGLE_DOWNLOAD_URL="https://www.kaggle.com/api/v1/datasets/download/kyanyoga/sample-sales-data"
+DOWNLOAD_DEST="$HOME/Downloads/sales-data.zip"
+KAGGLE_DOWNLOAD_URL="https://www.kaggle.com/api/v1/datasets/download/miketaylor123/sales-data"
 
 # Create data directory if it doesn't exist
 mkdir -p "$DATA_DIR"
@@ -56,22 +56,6 @@ fi
 
 # Upload the PySpark script to the GCS bucket
 SCRIPT_PATH="./scripts//Sales_Data_Cleaning_And_Aggregation.py"
-if [ -f "$SCRIPT_PATH" ]; then
-  echo "Uploading $SCRIPT_PATH to gs://$BUCKET_NAME/code/ ..."
-  gsutil cp "$SCRIPT_PATH" "gs://$BUCKET_NAME/code/"
-  if [ $? -eq 0 ]; then
-    echo "Script upload successful!"
-  else
-    echo "Script upload failed."
-    exit 1
-  fi
-else
-  echo "Error: $SCRIPT_PATH not found."
-  exit 1
-fi
-
-# Upload the PySpark script to the GCS bucket
-SCRIPT_PATH="./scripts//initialization_action.sh"
 if [ -f "$SCRIPT_PATH" ]; then
   echo "Uploading $SCRIPT_PATH to gs://$BUCKET_NAME/code/ ..."
   gsutil cp "$SCRIPT_PATH" "gs://$BUCKET_NAME/code/"
