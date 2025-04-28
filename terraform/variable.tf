@@ -93,3 +93,15 @@ variable "dataproc_temp_bucket" {
   type        = string
   default     = "custom-dataproc-temp-bucket"
 }
+
+variable "gcs_object_name" {
+  description = "Name/path of the initialization script in the GCS bucket"
+  type        = string
+  default     = "scripts/initialization_action.sh"  # Default path in bucket
+}
+
+variable "local_script_path" {
+  description = "Local path to the initialization script file"
+  type        = string
+  default     = "../scripts/initialization_action.sh"  # Default local path
+}

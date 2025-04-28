@@ -49,6 +49,14 @@ resource "google_storage_bucket_iam_member" "temp_bucket_iam" {
   member = "serviceAccount:${local.service_account_email}"
 }
 
+# Upload initialization script to the bucket
+resource "google_storage_bucket_object" "init_script" {
+  name   = var.gcs_object_name
+  source = var.local_script_path
+  bucket = google_storage_bucket.dataproc_staging_bucket.name
+}
+
+
 ##
 resource "google_storage_bucket" "sales_data_bucket" {
   name          = var.bucket_name
@@ -120,7 +128,7 @@ resource "google_dataproc_cluster" "sales_cluster" {
     }
     # You can define multiple initialization_action blocks
     initialization_action {
-      script      = "gs://sales_data_bucket_project_cider/code/initialization_action.sh"
+      script      = "gs://${google_storage_bucket.dataproc_staging_bucket.name}/${google_storage_bucket_object.init_script.name}"
       timeout_sec = 500
     }
   }
