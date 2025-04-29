@@ -222,7 +222,7 @@ Finally, connect Power BI to the `normalized_sales` BigQuery dataset to build in
 </p>
 
 <p align="center">
-  <img src="images/Dashboard_3JPG" alt="Dashboard_3" width="400" />
+  <img src="images/Dashboard_3.JPG" alt="Dashboard_3" width="400" />
 </p>
 
 <p align="center">
